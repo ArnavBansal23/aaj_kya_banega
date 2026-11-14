@@ -1,0 +1,15 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /dishes/{dishId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == 'Ycxl5zZoGmaEUA2cEIi6mLFTGxq2';
+    }
+
+    match /dailyMeals/{dailyMealId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == 'Ycxl5zZoGmaEUA2cEIi6mLFTGxq2';
+    }
+  }
+}
